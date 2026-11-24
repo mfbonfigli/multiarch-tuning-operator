@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi9/go-toolset:1.26.7 as builder
-ARG IMG=registry.redhat.io/multiarch-tuning/multiarch-tuning-rhel9-operator@sha256:e3476ad8c8c58fe5cf52787478077ee507bc233da5ecd7bd4fe300238fab1963
+ARG IMG=registry.redhat.io/multiarch-tuning/multiarch-tuning-rhel9-operator@sha256:33e93ccf6991674414133fd30df2fca1e00e6e3946858fa413a6d1b256e65ffe
 ARG ORIGINAL_IMG=registry.ci.openshift.org/origin/multiarch-tuning-operator:main
 USER 0
 WORKDIR /code
