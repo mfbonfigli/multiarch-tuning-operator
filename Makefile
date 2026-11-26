@@ -265,6 +265,9 @@ docker-buildx: manifests generate ## Build and push docker image for the manager
 .PHONY: rpm-lockfile
 rpm-lockfile: ## Regenerate rpms.lock.yaml for Konflux hermetic RPM prefetching
 	rpm-lockfile-prototype rpms.in.yaml
+	# The runtime input is resolved against ubi-micro: run in its own directory, because the
+	# tool always writes rpms.lock.yaml to the current working directory.
+	cd runtime && rpm-lockfile-prototype rpms.in.yaml
 
 ##@ Deployment
 
